@@ -26,6 +26,8 @@ public class AppTest {
             .withEnv("POSTGRES_DB", "test")
             .withEnv("POSTGRES_PASSWORD", "blah")
             .withEnv("POSTGRES_INITDB_ARGS", "-E UTF8")
+            .withCommand("-c", "log_statement=all")
+            .withInitScript("init.sql")
             .withUsername("tanaka")
             .withPassword("hello")
             .start();
